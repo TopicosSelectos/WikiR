@@ -1,0 +1,71 @@
+---
+title: "Vectores"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+sum_vector <- sum(poker_vector)
+sum_vector 
+
+sum_roulette <- sum(roulette_vector)
+sum_roulette
+
+sum_vector > sum_roulette
+
+#elige un vector especifico 
+
+el_dia <- poker_vector[3]
+el_dia
+
+#elige ciertos vectores
+los_dias <-poker_vector[c(1, 2, 3)]
+los_dias
+
+#elige una sucesion de posiciones
+todos_los_dias <- poker_vector[1:5]
+todos_los_dias 
+
+#elige segun los dias exactos que uo pone
+las_dias <- poker_vector[c("Monday","Tuesday")]
+las_dias
+
+
+#COMPARACIONES _________________________
+seleccion <- poker_vector >0
+seleccion  
+
+los_ganadores <- poker_vector[seleccion]
+los_ganadores
+
+```
+

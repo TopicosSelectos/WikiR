@@ -1,0 +1,152 @@
+---
+title: "while"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+velocidad <- 60
+
+while (velocidad > 30) {
+  
+  print("Ve mas despacio!")
+  velocidad <- velocidad - 5
+}
+
+velocidad 
+
+velocidad2 <- 100
+while (velocidad2 > 30){
+  print(paste("Tu velocidad es", velocidad2))
+  if (velocidad2 > 50) {
+    print("Baja de velocidad aun mas ")
+    velocidad2 <- velocidad2 - 10
+  } 
+  else {
+    print("Baja la velocidad")
+    velocidad2 <- velocidad2 -5
+  }
+}
+
+
+#code with scratch
+
+i <- 1 
+
+while (i <= 10){
+  print(3 * i)
+    if ((3*i) %% 8 == 0){
+      break
+}
+i <- i + 1
+}
+
+# loop over a vector
+
+primos <- c(2, 3, 5, 7, 11, 13)
+
+for (p in primos){
+  print(p)
+}
+
+mi_nombre <-c("C", "e", "s", "a", "r")
+
+for (c in mi_nombre)
+{
+  print(c)
+}
+
+lista <- list(2, 3, 4, 5, 6)
+
+for (l in lista){
+  print(l)
+}
+
+
+jrz <- list( codigopostal = 32696, 
+             avenidas = c("Eje Juan Gabriel", "Panamericana", "Lucero"), 
+             capitalChihuahua = FALSE)
+  
+  for (info in jrz) {
+    print(info)
+  }
+
+  for (i in 1:length(jrz)) {
+    print(jrz[[i]])
+    
+  }
+
+# OVer a matriz
+
+v1 <- c(1, 2, 3, 4, 5)
+v2 <- c(6, 7, 8, 9, 10)
+v3 <- c(11, 12, 13, 14, 15)
+
+matriz <- c(v1, v2, v3)
+
+mat <- matrix(matriz, byrow = TRUE, nrow = 3)
+mat
+
+for ( i in 1:nrow(mat)) {
+  for (j in 1:ncol(mat)) {
+    print(paste("En la fila", i, "y columna", j, "el valor es", mat[[i, j]]))
+    
+  }
+}
+
+
+facebook_friends <- c(5, 10, 13, 8, 16, 3)
+
+for (li in facebook_friends){
+  if (li > 10) {
+    print("Eres popular")
+  }
+else {
+  print("Haz mas amigos")
+}
+  print(li)
+}
+
+
+frase <- "La leyenda del hilo rojo es una historia japonesa que dice que no importa el lugar o el tiempo, 2 personas estan destinadas a encontrarse"
+
+disrupt_frase <- strsplit(frase, split = "")[[1]]
+disrupt_frase
+
+contador <- 0
+
+for (char in disrupt_frase) {
+  if(char == "e"){
+    contador<-contador +1
+}
+  if (char == "u") {
+    break
+  }
+}
+
+contador 
+```
+

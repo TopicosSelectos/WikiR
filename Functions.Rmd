@@ -1,0 +1,122 @@
+---
+title: "Functions"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+    help("mean")
+
+twitter <- c(2, 5, 7, 8, 4, 7, 23)
+tumblr <- c(17, 8, 5, 25, 6, 7, 15)
+
+avg_tw <- mean(x= twitter)
+avg_tu <- mean(tumblr)
+
+#avg_tw
+
+#avg_tu
+
+
+avg_suma <- mean(twitter+tumblr)
+avg_suma
+
+average_sum_trimeed <- mean(twitter+tumblr, trim = 0.3)
+average_sum_trimeed
+
+pinterest <- c(1, 2, 3, 5, NA, 3)
+
+mean(pinterest)
+
+mean(pinterest, na.rm = TRUE)
+
+#Functions inside functions cx
+velocidad <- 50 
+print(paste("Your speed is", velocidad))
+
+mean(abs(twitter-tumblr), na.rm = TRUE)
+
+#write your own function
+
+suma <- function(a, b){
+  sum<- a+b
+  sum
+  
+}
+
+suma(1, 2)
+
+
+potencia <- function(x, info= TRUE){
+  y <- x ^ 2
+  if (info) {
+    print(paste("La potencia de", x, "es", y))
+  }
+  return(y)
+}
+
+potencia(3, FALSE)
+
+
+twitter <- c(11, 5, 7, 8, 4, 7, 23)
+tumblr <- c(17, 8, 5, 25, 6, 7, 15)
+
+views <- function(vistas){
+  if (vistas < 10) {
+    print("Necesitas mas amigos")
+    return(vistas)
+  }
+  else {
+    print("Eres popular!")
+    return(0)
+  }
+}
+
+  #views(twitter[7])
+  
+  
+  #calcular con todos
+  
+  all_views <- function(vistas, return_Sum = TRUE){
+    contador <- 0
+    
+    for (x in vistas) {
+      contador <- contador + views(x)
+    }
+    
+    
+    if (return_Sum) {
+      return(contador)
+    }
+    else {
+      return(NULL)
+    }
+  }
+  
+  all_views(twitter)
+```
+
+
